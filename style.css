@@ -1,0 +1,541 @@
+/* ======================== GENERAL STYLES ======================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  background-color: #ffffff;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ======================== NAVBAR ======================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo a {
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00bcd4;
+}
+
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f5f5f5;
+  color: #121212;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ======================== SECTIONS ======================== */
+section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  scroll-margin-top: 50px;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ======================== ABOUT ME ======================== */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 320px;
+}
+
+.about-text {
+  flex: 3 1 650px;
+  padding-right: 3rem;
+  text-align: justify;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #222;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.about-highlights { 
+  list-style: none; 
+  padding: 0; 
+  margin-top: 1.5rem; 
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+} 
+
+.about-highlights li { 
+  margin-bottom: 1rem; 
+  font-size: 1.05rem; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.6rem; 
+  color: #222;
+} 
+
+.about-highlights i { 
+  color: #00bcd4; 
+  font-size: 1.2rem; 
+}
+
+/* ======================== ANIMATIONS ======================== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* ======================== SKILLS ======================== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: #e0f7fa;
+}
+
+.skill-card i,
+.skill-card img {
+  display: inline-block;
+  font-size: 3rem;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.html   { color: #E34F26; }
+.css    { color: #1572B6; }
+.js     { color: #F7DF1E; }
+.react  { color: #61DBFB; }
+.node   { color: #3C873A; }
+.express{ color: #000000; }
+.mongo  { color: #4DB33D; }
+.java   { color: #5382A1; }
+.python { color: #3776AB; }
+
+/* ======================== PROJECTS ======================== */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: #e0f7fa;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  background: #00bcd4;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #008c9e;
+}
+
+.btn.secondary {
+  background: #555;
+}
+
+.btn.secondary:hover {
+  background: #333;
+}
+
+/* ======================== RESUME ======================== */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.resume-download {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resume-download p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.resume-section {
+  margin-top: 2.5rem;
+}
+
+.resume-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00bcd4;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.resume-item {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item h4 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.resume-item span {
+  font-size: 0.95rem;
+  color: #00bcd4;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.resume-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resume-list li {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.resume-list li::before {
+  content: "•";
+  color: #00bcd4;
+  position: absolute;
+  left: 0;
+}
+
+/* ======================== CONTACT ======================== */
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-card {
+  background: #f5f5f5;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 0.8rem;
+}
+
+.contact-card h4 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  font-size: 2.2rem;
+  color: #00bcd4;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #008c9e;
+  transform: scale(1.2);
+}
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00bcd4;
+}
+
+.contact-form button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #00bcd4;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.contact-form button:hover {
+  background: #008c9e;
+}
+
+/* ======================== DARK MODE ======================== */
+body.dark-theme {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-theme .navbar {
+  background: #1e1e1e;
+}
+
+body.dark-theme .nav-links li a {
+  color: #f5f5f5;
+}
+
+body.dark-theme .nav-links li a:hover {
+  color: #00bcd4;
+}
+
+body.dark-theme #theme-toggle {
+  background: #f5f5f5;
+  color: #121212;
+}
+
+body.dark-theme .about-text p,
+body.dark-theme .about-highlights li {
+  color: #f5f5f5;
+}
+
+body.dark-theme .about-card,
+body.dark-theme .skill-card,
+body.dark-theme .project-card,
+body.dark-theme .contact-card {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-theme .about-image img {
+  box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+}
+
+body.dark-theme .about-highlights i,
+body.dark-theme .resume-section h3,
+body.dark-theme .resume-item span,
+body.dark-theme .social-links a,
+body.dark-theme .contact-form input:focus,
+body.dark-theme .contact-form textarea:focus {
+  color: aqua;
+  border-color: aqua;
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+  background: #1e1e1e;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+body.dark-theme .contact-form button {
+  background: aqua;
+  color: #121212;
+}
+
+body.dark-theme .contact-form button:hover {
+  background: #00bcd4;
+}
+
+/* ======================== RESPONSIVE DESIGN ======================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about-container { flex-direction: column; align-items: center; }
+  .about-text { padding-right: 0; text-align: center; }
+  .skills-container { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+  .projects-container { grid-template-columns: 1fr 1fr; }
+  .contact-cards { flex-direction: column; align-items: center; }
+  .contact-form-container { width: 100%; }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  section { padding: 4rem 1rem; }
+  section h2 { font-size: 2rem; }
+  .logo { font-size: 1.5rem; }
+  .about-text p { font-size: 0.95rem; }
+  .about-highlights li { font-size: 0.95rem; }
+  .skills-container { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; }
+  .projects-container { grid-template-columns: 1fr; }
+  .project-card { padding: 1.5rem; }
+  .contact-card { width: 90%; }
+  .contact-form input, .contact-form textarea { padding: 0.7rem 1rem; font-size: 0.95rem; }
+  #theme-toggle { padding: 0.4rem 0.8rem; font-size: 1rem; }
+}
