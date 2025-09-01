@@ -22,9 +22,16 @@ toggleBtn.addEventListener("click", () => {
 });
 
 // ======================== MOBILE MENU TOGGLE ========================
-const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const mobileMenuBtn = document.getElementById("mobile-menu"); // ✅ match the HTML ID
+const navLinks = document.getElementById("nav-links");       // also match your HTML ID
 
 mobileMenuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+});
+
+// Optional: Close menu when a link is clicked
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
 });
