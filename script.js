@@ -1,37 +1,45 @@
 // ======================== THEME TOGGLE ========================
 const toggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
-
-// Load saved theme from localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-theme");
   toggleBtn.textContent = "☀️";
 }
-
-// Toggle theme on button click
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-theme");
-
-  if (body.classList.contains("dark-theme")) {
-    toggleBtn.textContent = "☀️";
-    localStorage.setItem("theme", "dark");
-  } else {
-    toggleBtn.textContent = "🌙";
-    localStorage.setItem("theme", "light");
-  }
+  body.classList.contains("dark-theme") ? 
+    (toggleBtn.textContent="☀️", localStorage.setItem("theme","dark")) :
+    (toggleBtn.textContent="🌙", localStorage.setItem("theme","light"));
 });
 
-// ======================== MOBILE MENU TOGGLE ========================
-const mobileMenuBtn = document.getElementById("mobile-menu"); // ✅ match the HTML ID
-const navLinks = document.getElementById("nav-links");       // also match your HTML ID
+// ======================== MOBILE MENU ========================
+const mobileMenuBtn = document.getElementById("mobile-menu");
+const navLinks = document.getElementById("nav-links");
+mobileMenuBtn.addEventListener("click", ()=> navLinks.classList.toggle("active"));
+navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", ()=> navLinks.classList.remove("active")));
 
-mobileMenuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+// ======================== EMAILJS ========================
+emailjs.init("V6bBQR5En2QgEGFUe"); // Your public key
 
-// Optional: Close menu when a link is clicked
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", function(e){
+  e.preventDefault();
+  formStatus.textContent = "Sending...";
+  formStatus.style.color = "#000";
+
+  emailjs.sendForm("service_l7jmzdw","template_2wigm6o",this)
+    .then(res=>{
+      console.log(res);
+      formStatus.textContent = "Message sent successfully! ✅";
+      formStatus.style.color = "green";
+      contactForm.reset();
+    })
+    .catch(err=>{
+      console.error(err);
+      formStatus.textContent = "Oops! Something went wrong. ❌";
+      formStatus.style.color = "red";
+      alert("Error: " + JSON.stringify(err));
+    });
 });

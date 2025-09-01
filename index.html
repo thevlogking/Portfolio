@@ -11,6 +11,7 @@
 
   <!-- Devicon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -175,43 +176,47 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-      <div class="contact-cards">
-        <div class="contact-card">
-          <i class="fa-solid fa-envelope"></i>
-          <h4>Email</h4>
-          <p>chowdhury.sayantan18@gmail.com</p>
-        </div>
-        <div class="contact-card">
-          <i class="fa-solid fa-phone"></i>
-          <h4>Phone</h4>
-          <p>+91-9123981494</p>
-        </div>
-        <div class="contact-card">
-          <i class="fa-solid fa-map-marker-alt"></i>
-          <h4>Location</h4>
-          <p>Kolkata, India</p>
-        </div>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-container">
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>chowdhury.sayantan18@gmail.com</p>
       </div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/thevlogking/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/thevlogking" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.facebook.com/sayantan.chowdhury.144" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/the_vlog_king/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@the_vlog_king" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <div class="contact-card">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Phone</h4>
+        <p>+91-9123981494</p>
       </div>
-      <div class="contact-form-container">
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+      <div class="contact-card">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <h4>Location</h4>
+        <p>Kolkata, India</p>
       </div>
     </div>
-  </section>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/thevlogking/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/thevlogking" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.facebook.com/sayantan.chowdhury.144" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/the_vlog_king/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@the_vlog_king" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <div class="contact-form-container">
+      <form class="contact-form" id="contact-form">
+  <input type="text" name="user_name" placeholder="Your Name" required />
+  <input type="email" name="user_email" placeholder="Your Email" required />
+  <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+  <p id="form-status" style="margin-top: 10px; font-weight: bold;"></p>
+</form>
+    </div>
+  </div>
+</section>
 
   <!-- Script -->
   <script src="script.js"></script>
