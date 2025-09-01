@@ -1,13 +1,14 @@
+// ======================== THEME TOGGLE ========================
 const toggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Load saved theme
+// Load saved theme from localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-theme");
   toggleBtn.textContent = "☀️";
 }
 
-// Toggle theme
+// Toggle theme on button click
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-theme");
 
@@ -18,4 +19,12 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = "🌙";
     localStorage.setItem("theme", "light");
   }
+});
+
+// ======================== MOBILE MENU TOGGLE ========================
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+mobileMenuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 });

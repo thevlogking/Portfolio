@@ -9,7 +9,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Devicon (for Java, Python, Express, etc.) -->
+  <!-- Devicon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 </head>
 <body>
@@ -19,7 +19,7 @@
       <a href="#about"><span style="color: aqua;">Say</span>antan</a>
     </div>
     <div class="nav-container">
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About Me</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">My Projects</a></li>
@@ -27,43 +27,43 @@
         <li><a href="#contact">Contact Me</a></li>
       </ul>
       <button id="theme-toggle">🌙</button>
+      <button class="mobile-menu" id="mobile-menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </button>
     </div>
   </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="about-container">
-
-    <!-- Profile Image -->
-    <div class="about-image">
-      <img src="images/profile.jpg" alt="Sayantan Chowdhury"/>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/profile.jpg" alt="Sayantan Chowdhury"/>
+      </div>
+      <div class="about-text">
+        <p class="fade-up">
+          Hello! I'm <strong>Sayantan Chowdhury</strong>, a professional web developer and software engineer with a strong foundation in full-stack development.
+        </p>
+        <p class="fade-up" style="animation-delay: 0.2s;">
+          I specialize in <strong>HTML, CSS, JavaScript</strong>, and the <strong>MERN stack (MongoDB, Express.js, React, Node.js)</strong>. I also have solid experience in <strong>Python and Java</strong>.
+        </p>
+        <p class="fade-up" style="animation-delay: 0.4s;">
+          Beyond development, I am a <strong>video editor and content creator</strong> with my YouTube channel “The Vlog King.”
+        </p>
+        <p class="fade-up" style="animation-delay: 0.6s;">
+          My passion lies in developing high-quality web applications that prioritize performance, accessibility, and maintainable code.
+        </p>
+        <ul class="about-highlights fade-up" style="animation-delay: 0.8s;">
+          <li><i class="fa-solid fa-check-circle"></i> Expertise in front-end and back-end development</li>
+          <li><i class="fa-solid fa-check-circle"></i> Skilled in RESTful APIs, database design, and cloud integration</li>
+          <li><i class="fa-solid fa-check-circle"></i> Strong problem-solving and algorithmic skills</li>
+          <li><i class="fa-solid fa-check-circle"></i> Adept at teamwork, project planning, and continuous learning</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <!-- About Text -->
-    <div class="about-text">
-      <p class="fade-up">
-        Hello! I'm <strong>Sayantan Chowdhury</strong>, a professional web developer and software engineer with a strong foundation in full-stack development. My expertise lies in crafting responsive, user-friendly, and scalable digital solutions.
-      </p>
-      <p class="fade-up" style="animation-delay: 0.2s;">
-        I specialize in <strong>HTML, CSS, JavaScript</strong>, and the <strong>MERN stack (MongoDB, Express.js, React, Node.js)</strong>. I also have solid experience in <strong>Python and Java</strong>, enabling me to design robust backend systems and implement complex algorithms efficiently.
-      </p>
-      <p class="fade-up" style="animation-delay: 0.4s;">
-        Beyond development, I am a <strong>video editor and content creator</strong> with my YouTube channel “The Vlog King,” where I document travel experiences, live events, and creative projects. This enhances my ability to blend technical skills with creativity.
-      </p>
-      <p class="fade-up" style="animation-delay: 0.6s;">
-        My passion lies in developing high-quality web applications that prioritize performance, accessibility, and maintainable code. I continuously explore new technologies and methodologies to deliver impactful solutions.
-      </p>
-      <ul class="about-highlights fade-up" style="animation-delay: 0.8s;">
-        <li><i class="fa-solid fa-check-circle"></i> Expertise in front-end and back-end development</li>
-        <li><i class="fa-solid fa-check-circle"></i> Skilled in RESTful APIs, database design, and cloud integration</li>
-        <li><i class="fa-solid fa-check-circle"></i> Strong problem-solving and algorithmic skills</li>
-        <li><i class="fa-solid fa-check-circle"></i> Adept at teamwork, project planning, and continuous learning</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-  <!-- Skills -->
+  <!-- Skills Section -->
   <section id="skills">
     <h2>My Skills</h2>
     <div class="skills-container">
@@ -79,7 +79,7 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
     <div class="projects-container">
@@ -126,14 +126,14 @@
     </div>
   </section>
 
-  <!-- Resume -->
+  <!-- Resume Section -->
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-container">
       <div class="resume-section">
         <h3>Graduation</h3>
         <div class="resume-item">
-          <h4>Bachelor of Computer Application(B.C.A)</h4><br>
+          <h4>Bachelor of Computer Application (B.C.A)</h4><br>
           <span>Maulana Abul Kalam Azad University of Technology, 2023 – 2027</span>
           <p>Graduated with a strong foundation in software development, data structures, and algorithms.</p>
         </div>
@@ -148,7 +148,6 @@
           <p>Passed with 78.14%</p>
         </div>
       </div>
-
       <div class="resume-section">
         <h3>Professional Experience</h3>
         <div class="resume-item">
@@ -162,7 +161,6 @@
           <p>Developed responsive websites and full-stack applications for personal and client projects.</p>
         </div>
       </div>
-
       <div class="resume-section">
         <h3>Certifications</h3>
         <ul class="resume-list">
@@ -170,79 +168,52 @@
         </ul>
       </div>
     </div>
-
     <div class="resume-download"><br>
       <p>Download my full resume in PDF format:</p><br>
       <a href="files/Sayantan_Chowdhury_Resume.pdf" download class="btn">Download Resume</a>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
-  <h2>Contact Me</h2>
-  <div class="contact-container">
-
-    <!-- Contact Info Cards -->
-    <div class="contact-cards">
-      <div class="contact-card">
-        <i class="fa-solid fa-envelope"></i>
-        <h4>Email</h4>
-        <p>chowdhury.sayantan18@gmail.com</p>
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-cards">
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Email</h4>
+          <p>chowdhury.sayantan18@gmail.com</p>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+          <h4>Phone</h4>
+          <p>+91-9123981494</p>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <h4>Location</h4>
+          <p>Kolkata, India</p>
+        </div>
       </div>
-      <div class="contact-card">
-        <i class="fa-solid fa-phone"></i>
-        <h4>Phone</h4>
-        <p>+91-9123981494</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/thevlogking/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/thevlogking" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/sayantan.chowdhury.144" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/the_vlog_king/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@the_vlog_king" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
-      <div class="contact-card">
-        <i class="fa-solid fa-map-marker-alt"></i>
-        <h4>Location</h4>
-        <p>Kolkata, India</p>
+      <div class="contact-form-container">
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
+  </section>
 
-    <!-- Social Links -->
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/thevlogking/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/thevlogking" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.facebook.com/sayantan.chowdhury.144" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/the_vlog_king/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@the_vlog_king" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form-container">
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-  <script>
-    const toggleBtn = document.getElementById("theme-toggle");
-    const body = document.body;
-
-    // Load saved theme
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark-theme");
-      toggleBtn.textContent = "☀️";
-    }
-
-    // Toggle theme
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-theme");
-
-      if (body.classList.contains("dark-theme")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("theme", "dark");
-      } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("theme", "light");
-      }
-    });
-  </script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
