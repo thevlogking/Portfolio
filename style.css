@@ -69,9 +69,19 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ======================== SECTIONS ======================== */
-section { padding: 6rem 2rem; min-height: 100vh; max-width: 1000px; margin: 0 auto; scroll-margin-top: 50px; }
+section {
+padding: 6rem 2rem; 
+min-height: 70vh; 
+max-width: 1000px; 
+margin: 0 auto; 
+scroll-margin-top: 50px; 
+}
 
-section h2 { font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center; }
+section h2 { 
+font-size: 2.5rem; 
+margin-bottom: 1.5rem; 
+text-align: center; 
+}
 
 /* ======================== ABOUT ME ======================== */
 .about-container {
@@ -267,28 +277,30 @@ body.dark-theme .contact-form button { background: aqua; color: #121212; }
 body.dark-theme .contact-form button:hover { background: #00bcd4; }
 
 /* ======================== RESPONSIVE DESIGN ======================== */
-@media (max-width: 992px) {
-  .about-container { flex-direction: column; align-items: center; }
-  .about-text { padding-right: 0; text-align: center; }
-  .skills-container { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
-  .projects-container { grid-template-columns: 1fr 1fr; }
-  .contact-cards { flex-direction: column; align-items: center; }
-  .contact-form-container { width: 100%; }
-}
 
-@media (max-width: 576px) {
+/* Phones - max 767px */
+@media (max-width: 767px) {
   section { padding: 4rem 1rem; }
   section h2 { font-size: 2rem; }
+
   .logo { font-size: 1.5rem; }
+  .about-container { flex-direction: column; align-items: center; }
+  .about-text { padding-right: 0; text-align: center; }
   .about-text p { font-size: 0.95rem; }
   .about-highlights li { font-size: 0.95rem; }
+
   .skills-container { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; }
   .projects-container { grid-template-columns: 1fr; }
   .project-card { padding: 1.5rem; }
+
+  .contact-cards { flex-direction: column; align-items: center; }
   .contact-card { width: 90%; }
+  .contact-form-container { width: 100%; }
   .contact-form input, .contact-form textarea { padding: 0.7rem 1rem; font-size: 0.95rem; }
+
   #theme-toggle { padding: 0.4rem 0.8rem; font-size: 1rem; }
 
+  /* Mobile menu */
   .mobile-menu { display: block; }
   .nav-links { 
     display: none;
@@ -301,8 +313,34 @@ body.dark-theme .contact-form button:hover { background: #00bcd4; }
     border-radius: 12px;
     gap: 1rem;
   }
-
   .nav-links.active { display: flex; }
   .nav-links li a { color: #fff; font-size: 1rem; }
   body.dark-theme .nav-links { background: #1e1e1e; }
+}
+
+/* Small Tablets - 768px to 899px */
+@media (min-width: 768px) and (max-width: 899px) {
+  .about-container { flex-direction: column; align-items: center; }
+  .about-text { text-align: center; padding-right: 0; }
+  .skills-container { grid-template-columns: repeat(2, 1fr); }
+  .projects-container { grid-template-columns: 1fr 1fr; }
+  .contact-cards { justify-content: center; }
+  .contact-form-container { width: 90%; }
+}
+
+/* Tablets - 900px to 1023px */
+@media (min-width: 900px) and (max-width: 1023px) {
+  .about-container { gap: 1.5rem; }
+  .skills-container { grid-template-columns: repeat(3, 1fr); }
+  .projects-container { grid-template-columns: repeat(2, 1fr); }
+  .contact-container { padding: 1.5rem; }
+}
+
+/* Desktops - 1024px+ */
+@media (min-width: 1024px) {
+  .about-container { flex-direction: row; align-items: flex-start; }
+  .skills-container { grid-template-columns: repeat(4, 1fr); }
+  .projects-container { grid-template-columns: repeat(3, 1fr); }
+  .contact-cards { flex-wrap: wrap; justify-content: center; }
+  .contact-form-container { max-width: 600px; }
 }
