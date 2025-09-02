@@ -278,6 +278,8 @@ body.dark-theme .contact-form button:hover { background: #00bcd4; }
 
 /* ======================== RESPONSIVE DESIGN ======================== */
 
+/* Phones - max 767px */
+@media (max-width: 767px) {
 /* Mobile menu hidden by default */
 .nav-links {
   position: fixed;
@@ -338,6 +340,9 @@ body.dark-theme .contact-form button:hover { background: #00bcd4; }
 #mobile-menu.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+}
+
+
 
 /* Small Tablets - 768px to 899px */
 @media (min-width: 768px) and (max-width: 899px) {
