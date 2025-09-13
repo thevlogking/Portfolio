@@ -34,7 +34,23 @@ mobileMenuBtn.addEventListener("click", () => {
 });
 
 navLinks.querySelectorAll("a").forEach(link =>
-  link.addEventListener("click", closeMenu)
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    if (href && href.startsWith("#")) {
+      e.preventDefault();
+      closeMenu();
+      setTimeout(() => {
+        const sectionId = href.substring(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const rect = section.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          window.scrollTo({ top: rect.top + scrollTop - navbarHeight, behavior: 'smooth' });
+        }
+      }, 400);
+    }
+  })
 );
 
 menuOverlay?.addEventListener("click", closeMenu);
