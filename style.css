@@ -104,7 +104,8 @@ section h2 {
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center; /* ✅ Vertically center items */
+  justify-content: center; /* ✅ Horizontally center everything */
   gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -113,11 +114,15 @@ section h2 {
 .about-image {
   flex: 1 1 300px;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* ✅ Center image inside its container */
 }
 
 .about-image img {
-  max-width: 100%;
+  max-width: 85%; /* ✅ Reduce size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* ✅ Centers image within flex child */
+  border-radius: 10px; /* Optional: rounded corners */
 }
 
 .about-text {
@@ -125,6 +130,7 @@ section h2 {
   padding-right: 3rem;
   text-align: justify;
 }
+
 
 .about-text p {
   font-size: 1rem;
@@ -618,11 +624,11 @@ body.dark-theme .contact-form button:hover {
     font-size: 0.9rem;
     padding: 0.6rem 0.9rem;
     width: 100%;
-    box-sizing: border-box; /* ensures padding doesn't break width */
+    box-sizing: border-box;
   }
   .contact-form button {
     display: block;
-    width: 100%; /* ✅ Full width button */
+    width: 100%;
     font-size: 0.9rem;
     padding: 0.7rem 1rem;
     margin-top: 1rem;
@@ -630,7 +636,7 @@ body.dark-theme .contact-form button:hover {
     transition: transform 0.2s ease, background 0.3s ease;
   }
   .contact-form button:active {
-    transform: scale(0.97); /* ✅ Tap animation for mobile */
+    transform: scale(0.97);
   }
 
   /* Buttons & Forms */
@@ -640,10 +646,8 @@ body.dark-theme .contact-form button:hover {
   }
 }
 
-
-/* Larger phones & phablets (481px - 767px) */
+/* 📱 Larger phones & phablets (481px - 767px) */
 @media only screen and (min-width: 481px) and (max-width: 767px) {
-
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -652,16 +656,29 @@ body.dark-theme .contact-form button:hover {
   }
 }
 
+/* ✅ Show hamburger menu below 767px */
+@media only screen and (max-width: 767px) {
+  #mobile-menu {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* Hide normal navbar links to avoid duplication */
+  .navbar ul {
+    display: none;
+  }
+}
+
+/* 💻 Hide hamburger on tablets and above */
 @media only screen and (min-width: 768px) {
   #mobile-menu {
     display: none;
   }
-
   #theme-toggle {
     background: transparent;
   }
-
-   .skills-container {
+  .skills-container {
     grid-template-columns: repeat(2, 1fr);
   }
   .projects-container {
@@ -711,7 +728,7 @@ body.dark-theme .contact-form button:hover {
     padding: 0.8rem 1rem;
   }
   .contact-form button {
-    width: 100%; /* Keep button full width for better UX */
+    width: 100%;
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
   }
@@ -741,11 +758,12 @@ body.dark-theme .contact-form button:hover {
     margin: 0 auto;
   }
   .contact-form button {
-    width: auto; /* Button auto width on desktop */
+    width: auto;
     display: inline-block;
     padding: 0.8rem 2rem;
   }
 }
+
 
 
 /* ===================== THEME TOGGLE INSIDE MENU ===================== */
