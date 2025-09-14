@@ -77,14 +77,23 @@ ul {
 
 .mobile-menu {
   display: none;
-  background: #f5f5f5;
+  flex-direction: column; /* stack spans vertically */
+  justify-content: space-between;
+  width: 30px; /* width of button */
+  height: 22px; /* height to fit 3 bars */
   border: none;
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
+  background: none;
   cursor: pointer;
-  font-size: 1.4rem;
+  padding: 0;
 }
 
+.mobile-menu span {
+  display: block;
+  height: 3px; /* thickness of bar */
+  width: 100%;
+  background-color: #ffffff; /* bar color */
+  border-radius: 2px;
+}
 /* ======================== SECTIONS ======================== */
 section {
   padding: 6rem 2rem;
@@ -130,7 +139,6 @@ section h2 {
   padding-right: 3rem;
   text-align: justify;
 }
-
 
 .about-text p {
   font-size: 1rem;
@@ -558,7 +566,8 @@ body.dark-theme .contact-form button:hover {
   .skill-card {
     padding: 1rem;
   }
-  .skill-card i, .skill-card img {
+  .skill-card i,
+  .skill-card img {
     font-size: 2rem;
   }
 
@@ -658,21 +667,28 @@ body.dark-theme .contact-form button:hover {
 
 /* ✅ Show hamburger menu below 767px */
 @media only screen and (max-width: 767px) {
-  #mobile-menu {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
+  .mobile-menu {
+    display: flex;
   }
 
-  /* Hide normal navbar links to avoid duplication */
-  .navbar ul {
+  .nav-links li {
     display: none;
+  }
+
+  /* Keep theme toggle visible */
+  .nav-links li.menu-theme-toggle {
+    display: block;
+  }
+
+  #theme-toggle {
+    background: transparent;
+    font-size: 30px;
   }
 }
 
 /* 💻 Hide hamburger on tablets and above */
 @media only screen and (min-width: 768px) {
-  #mobile-menu {
+  .mobile-menu {
     display: none;
   }
   #theme-toggle {
@@ -764,13 +780,11 @@ body.dark-theme .contact-form button:hover {
   }
 }
 
-
-
 /* ===================== THEME TOGGLE INSIDE MENU ===================== */
 .menu-theme-toggle {
   display: flex;
   justify-content: center;
-} 
+}
 
 .menu-theme-toggle button {
   background: #f5f5f5;
@@ -781,29 +795,71 @@ body.dark-theme .contact-form button:hover {
   color: #121212;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
-} 
+}
 
 .menu-theme-toggle button:hover {
   background: #e0e0e0;
-} 
+}
 
 /* Dark theme button styling */
 body.dark-theme .menu-theme-toggle button {
   background: #333;
   color: #fff;
-} 
- body.dark-theme .menu-theme-toggle button:hover {
+}
+body.dark-theme .menu-theme-toggle button:hover {
   background: #5b5a5a;
-} 
+}
 
 /* ======================== OVERLAY ======================== */
 #menu-overlay {
-  display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  background-color: #121212;
   z-index: 1000;
+  padding: 2rem;
+
+  /* ✅ start hidden offscreen */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
 }
+
 #menu-overlay.active {
-  display: block;
+  transform: translateX(0);
+}
+
+/* ❌ Close button */
+#menu-overlay .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ✅ Menu items */
+#menu-overlay .menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 4rem; /* push down below close button */
+  gap: 1.5rem;
+}
+
+#menu-overlay .menu-items a {
+  color: rgba(255, 255, 255, 0.531);
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: color 0.2s;
+}
+
+#menu-overlay .menu-items a:hover {
+  color: #00bcd4; /* accent hover color */
 }

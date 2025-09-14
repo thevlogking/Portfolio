@@ -17,7 +17,7 @@ toggleBtn.addEventListener("click", () => {
 });
 
 // ======================== MOBILE MENU ========================
-const mobileMenuBtn = document.getElementById("mobile-menu");
+const mobileMenuBtn = document.querySelector(".mobile-menu");
 const navLinks = document.getElementById("nav-links");
 const menuOverlay = document.getElementById("menu-overlay"); // Add this in HTML
 
@@ -33,7 +33,7 @@ mobileMenuBtn.addEventListener("click", () => {
   menuOverlay?.classList.toggle("active");
 });
 
-navLinks.querySelectorAll("a").forEach(link =>
+navLinks.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", (e) => {
     const href = link.getAttribute("href");
     if (href && href.startsWith("#")) {
@@ -43,10 +43,14 @@ navLinks.querySelectorAll("a").forEach(link =>
         const sectionId = href.substring(1);
         const section = document.getElementById(sectionId);
         if (section) {
-          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const navbarHeight = document.querySelector(".navbar").offsetHeight;
           const rect = section.getBoundingClientRect();
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          window.scrollTo({ top: rect.top + scrollTop - navbarHeight, behavior: 'smooth' });
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          window.scrollTo({
+            top: rect.top + scrollTop - navbarHeight,
+            behavior: "smooth",
+          });
         }
       }, 400);
     }
@@ -68,14 +72,15 @@ contactForm.addEventListener("submit", function (e) {
   formStatus.textContent = "Sending...";
   formStatus.style.color = "#555";
 
-  emailjs.sendForm("service_l7jmzdw", "template_2wigm6o", this)
-    .then(res => {
+  emailjs
+    .sendForm("service_l7jmzdw", "template_2wigm6o", this)
+    .then((res) => {
       console.log("EmailJS Success:", res);
       formStatus.textContent = "Message sent successfully! ✅";
       formStatus.style.color = "green";
       contactForm.reset();
     })
-    .catch(err => {
+    .catch((err) => {
       console.error("EmailJS Error:", err);
       formStatus.textContent = "Oops! Something went wrong. ❌";
       formStatus.style.color = "red";

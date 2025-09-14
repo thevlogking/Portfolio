@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sayantan Chowdhury</title>
-    
 
     <!-- Font Awesome -->
     <link
@@ -49,7 +48,7 @@
           </li>
         </ul>
         <!-- ✅ Only Hamburger outside -->
-        <button id="mobile-menu">
+        <button class="mobile-menu">
           <span></span>
           <span></span>
           <span></span>
@@ -58,7 +57,16 @@
     </nav>
 
     <!-- ✅ Overlay -->
-    <div id="menu-overlay"></div>
+    <div id="menu-overlay">
+      <button class="close-btn">&times;</button>
+      <nav class="menu-items">
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">My Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact Me</a>
+      </nav>
+    </div>
 
     <!-- About Section -->
     <section id="about">
